@@ -6,7 +6,7 @@ import (
 )
 
 func HelloIndex(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "hello world :)")
+	fmt.Fprint(w, "hello world, what a lovely day :)")
 }
 
 func HealthcheckIndex(w http.ResponseWriter, r *http.Request) {
