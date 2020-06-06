@@ -19,6 +19,12 @@ var routes = Routes{
 		HelloIndex,
 	},
 	Route{
+		"WeatherIndex",
+		"GET",
+		"/weather",
+		WeatherIndex,
+	},
+	Route{
 		"HealthcheckIndex",
 		"GET",
 		"/healthcheck",

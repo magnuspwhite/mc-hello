@@ -49,3 +49,12 @@ Connect to the app on `http://localhost:8080`
 | Parameters    | None
 | Returns       | 200 HTTP response code if ready
 
+### /weather
+
+| Property      | Detail
+| --------------| --------------
+| Description   | Weather status
+| URL           | `/weather`
+| Method        | GET
+| Parameters    | None
+| Returns       | 200
