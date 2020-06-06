@@ -2,6 +2,19 @@
 
 A basic Go hello world application built on docker
 
+## Docker Image Tagging
+
+Tags follow semantic versioning (https://semver.org/)
+
+Get the pushed versions to the local docker registry by running `/bin/bash get-docker-repo-tags.sh`
+
+## Versions
+
+- **0.1.0** added weather endpoint
+- **0.0.2** fixing hello world message
+- **0.0.1** fix adding build script
+
+
 ## Debug locally
 
 ```
