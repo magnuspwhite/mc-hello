@@ -1,6 +1,35 @@
 # MC Hello World Go App
 
-A basic Go hello world application built on docker
+A basic Go hello world application built on docker with terraform to build GKE cluster
+
+# Versions
+
+- **0.2.0** added terraform module to deploy to GKE
+- **0.1.0** added weather endpoint
+- **0.0.2** fixing hello world message
+- **0.0.1** fix adding build script
+
+
+# Terraform
+
+## Variables
+
+Update terraform variables in `terraform.tfvars`
+
+## Deploy
+
+```
+# initialize terraform modules, plugins etc
+terraform init
+# validate configs
+terraform validate
+# apply terraform changes
+terraform apply
+```
+
+
+# Application
+
 
 ## Docker Image Tagging
 
@@ -8,14 +37,7 @@ Tags follow semantic versioning (https://semver.org/)
 
 Get the pushed versions to the local docker registry by running `/bin/bash get-docker-repo-tags.sh`
 
-## Versions
-
-- **0.1.0** added weather endpoint
-- **0.0.2** fixing hello world message
-- **0.0.1** fix adding build script
-
-
-## Debug locally
+## Debug app locally
 
 ```
 # create local docker register

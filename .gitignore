@@ -1,3 +1,5 @@
 .idea/*
 pkg/*
 src/*
+.terraform/*
+gcp-service-account-key.json
