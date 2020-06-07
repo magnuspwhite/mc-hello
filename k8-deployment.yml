@@ -1,0 +1,58 @@
+# app config
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "mc-hello"
+spec:
+  replicas: 3
+  strategy:
+    type: "RollingUpdate"
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: "mc-hello"
+  template:
+    metadata:
+      labels:
+        app: "mc-hello"
+        runtime: go
+        os: alpine
+    spec:
+      containers:
+        - name: "mc-hello"
+          image: "magnuspwhite/mc-hello:0.2.0"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 15
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+---
+# port forwarding service
+apiVersion: v1
+kind: Service
+metadata:
+  name: "mc-hello-service"
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 9090
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: "mc-hello"

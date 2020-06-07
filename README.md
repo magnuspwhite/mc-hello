@@ -4,6 +4,7 @@ A basic Go hello world application built on docker with terraform to build GKE c
 
 # Versions
 
+- **0.3.0** added kube deploy config & script
 - **0.2.0** added terraform module to deploy to GKE
 - **0.1.0** added weather endpoint
 - **0.0.2** fixing hello world message
